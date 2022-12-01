@@ -36,7 +36,7 @@
   <div class="container ">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
-        <p class="text-left"><em>Regression-based methods have shown high efficiency and effectiveness for multi-view human mesh recovery. The key components of a typical regressor lie in the feature extraction of input views and the fusion of multi-view features. In this paper, we present Pixel-aligned Feedback Fusion (PaFF) for accurate yet efficient human mesh recovery from multi-view images. PaFF is an iterative regression framework that performs feature extraction and fusion alternately. At each iteration, PaFF extracts pixel-aligned feedback features from each input view according to the reprojection of the current estimation and fuses them together with respect to each vertex of the downsampled mesh. In this way, our regressor can not only perceive the misalignment status of each view from the feedback features but also correct the mesh parameters more effectively based on the feature fusion on mesh vertices. Additionally, our regressor disentangles the global orientation and translation of the body mesh from the estimation of mesh parameters such that the camera parameters of input views can be better utilized in the regression process. The efficacy of our method is validated in the Human3.6M dataset via comprehensive ablation experiments, where PaFF achieves 33.02 MPJPE and brings significant im- provements over the previous best solutions by more than 29%.  </em></p>
+        <p class="text-left"><em>Regression-based methods have shown high efficiency and effectiveness for multi-view human mesh recovery. The key components of a typical regressor lie in the feature extraction of input views and the fusion of multi-view features. In this paper, we present Pixel-aligned Feedback Fusion (PaFF) for accurate yet efficient human mesh recovery from multi-view images. PaFF is an iterative regression framework that performs feature extraction and fusion alternately. At each iteration, PaFF extracts pixel-aligned feedback features from each input view according to the reprojection of the current estimation and fuses them together with respect to each vertex of the downsampled mesh. In this way, our regressor can not only perceive the misalignment status of each view from the feedback features but also correct the mesh parameters more effectively based on the feature fusion on mesh vertices. Additionally, our regressor disentangles the global orientation and translation of the body mesh from the estimation of mesh parameters such that the camera parameters of input views can be better utilized in the regression process. The efficacy of our method is validated in the Human3.6M dataset via comprehensive ablation experiments, where PaFF achieves 33.02 MPJPE and brings significant improvements over the previous best solutions by more than 29%.  </em></p>
         <p class="text-left">&nbsp;</p>
 		<h5 class="text-center">
           <a href="https://arxiv.org/">[arXiv]</a>
@@ -48,11 +48,11 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>
     <img src="./assets/pose&shape.png" width="800" alt="">
-        <p class="text-left">Fig 2.&nbsp;<b>Multi-view Pose & Shape Feedback Fusion Module. </b> a) The structure of pose & shape multi-view feed- back fusion Module. b) Visualize vertices selected by max-pooling: The estimated meshes from the previous iteration and the sampled vertices are shown at the bottom. In the top images, we visualize the sampling vertex in each view that contributes most to one feature dimension of the fused feature. By looking at the selected vertices on the left arm and legs, we can find that the vertices which reflect more estimation misalignment are easier to be chosen. </p>
+        <p class="text-left">Fig 2.&nbsp;<b>Multi-view Pose & Shape Feedback Fusion Module. </b> a) The structure of pose & shape multi-view feedback fusion Module. b) Visualize vertices selected by max-pooling: The estimated meshes from the previous iteration and the sampled vertices are shown at the bottom. In the top images, we visualize the sampling vertex in each view that contributes most to one feature dimension of the fused feature. By looking at the selected vertices on the left arm and legs, we can find that the vertices which reflect more estimation misalignment are easier to be chosen. </p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
     <img src="./assets/O_estimate.png" width="800" alt="">
-        <p class="text-left">Fig 3.&nbsp;<b>Global Orientation Estimator. </b> (a) Method iO and (b) Method fO are two options for Global Orientation Es- timator; (c) shows the motivation of method fO that uses transformer fusion to collect multi-view body parts mis-alignment signals in order to avoid depth ambiguity and occlusion problems. Estimated models and feature sampling are visualized in the left images, while updated estimations are shown in the right images. Blue arrows indicate the correction rotation needed for each view’s estimation. Comparing the refinement effect in one iteration (k=2) of the two methods, method fO performs better in orientation estimation, which also leads to a better estimation of the right leg. </p>
+        <p class="text-left">Fig 3.&nbsp;<b>Global Orientation Estimator. </b> (a) Method iO and (b) Method fO are two options for Global Orientation Estimator; (c) shows the motivation of method fO that uses transformer fusion to collect multi-view body parts mis-alignment signals in order to avoid depth ambiguity and occlusion problems. Estimated models and feature sampling are visualized in the left images, while updated estimations are shown in the right images. Blue arrows indicate the correction rotation needed for each view’s estimation. Comparing the refinement effect in one iteration (k=2) of the two methods, method fO performs better in orientation estimation, which also leads to a better estimation of the right leg. </p>
         <p>&nbsp;</p>
       </div>
     </div>
@@ -72,7 +72,7 @@
       <div class="col-lg-12 col-md-12 col-sm-12 text-center col-xl-12"> 
 		<p>&nbsp;</p>
 		<img src="./assets/vis1.png" width="1000" alt="">
-        <p class="text-left">Fig 4.&nbsp;Qualitative results on Human3.6M and MPI-INF- 3DHP. Each row means a different view.</p>
+        <p class="text-left">Fig 4.&nbsp;Qualitative results on Human3.6M and MPI-INF-3DHP. Each row means a different view.</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
     <img src="./assets/suc_mtc.png" width="1000" alt="">
@@ -80,7 +80,7 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>    
 		<img src="./assets/vis2.png" width="1000" alt="">
-        <p class="text-left">Fig 6.&nbsp;Visualization of the effect of Multi-view PaF Fea- ture by comparing the calibration-free PaFF and Shape-aware (Liang and Lin 2019) in two cases. </p>
+        <p class="text-left">Fig 6.&nbsp;Visualization of the effect of Multi-view PaF Feature by comparing the calibration-free PaFF and Shape-aware (Liang and Lin 2019) in two cases. </p>
         <p>&nbsp;</p>
       </div>
     </div>
