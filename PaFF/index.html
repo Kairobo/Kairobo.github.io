@@ -1,1 +1,196 @@
-work in progress
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PaFF's Project Page</title>
+<!-- Bootstrap -->
+<link href="./css/bootstrap-4.0.0.css" rel="stylesheet">
+</head>
+<body>
+<div id="page_container">
+<header>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center">AAAI 2023</h5>
+          <h2 class="text-center">Delving Deep into Pixel Alignment Feature for Accurate Multi-view Human Mesh Recovery</h2>
+          <p class="text-center">&nbsp;</p>
+          <h6 class="text-center"><a href="http://kairobo.github.io//">Kai Jia</a>, <a href="https://hongwenzhang.github.io/">Hongwen Zhang</a>, <a href="https://anl13.github.io/">Liang An</a>, <a href="http://www.liuyebin.com/">Yebin Liu</sup></a></h6>
+          <p class="text-center">Tsinghua University</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <p>&nbsp;</p>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Abstract</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
+        <p class="text-left"><em>Regression-based methods have shown high efficiency and effectiveness for multi-view human mesh recovery. The key components of a typical regressor lie in the feature extraction of input views and the fusion of multi-view features. In this paper, we present Pixel-aligned Feedback Fusion (PaFF) for accurate yet efficient human mesh recovery from multi-view images. PaFF is an iterative regression framework that performs feature extraction and fusion alternately. At each iteration, PaFF extracts pixel-aligned feedback features from each input view according to the reprojection of the current estimation and fuses them together with respect to each vertex of the downsampled mesh. In this way, our regressor can not only perceive the misalignment status of each view from the feedback features but also correct the mesh parameters more effectively based on the feature fusion on mesh vertices. Additionally, our regressor disentangles the global orientation and translation of the body mesh from the estimation of mesh parameters such that the camera parameters of input views can be better utilized in the regression process. The efficacy of our method is validated in the Human3.6M dataset via comprehensive ablation experiments, where PaFF achieves 33.02 MPJPE and brings significant improvements over the previous best solutions by more than 29%.  </em></p>
+        <p class="text-left">&nbsp;</p>
+		<h5 class="text-center">
+          <a href="https://arxiv.org/">[arXiv]</a>
+          <a href="https://github.com/Kairobo/PaFF">[Code]</a>
+        </h5>
+        <p class="text-left">&nbsp;</p>
+		<img src="./assets/overview.png" width="1080" alt="">
+        <p class="text-left">Fig 1.&nbsp;<b>Overview of our proposed Pixel-aligned Feedback Fusion (PaFF) pipeline. </b> (a) Pixel Alignment Feedback (PaF) Feature Extraction. (b) PaFF iteratively refines human body parameters’ estimation with the guidance of the PaF feature. (c) The task of multi-view feedback fusion is disentangled into three tasks - Multi-view Pose & Shape Fusion, Multi-view Orientation Estimation, and Multi-view Translation Estimation to incorporate camera parameters in the end-to-end model. </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    <img src="./assets/pose&shape.png" width="800" alt="">
+        <p class="text-left">Fig 2.&nbsp;<b>Multi-view Pose & Shape Feedback Fusion Module. </b> a) The structure of pose & shape multi-view feedback fusion Module. b) Visualize vertices selected by max-pooling: The estimated meshes from the previous iteration and the sampled vertices are shown at the bottom. In the top images, we visualize the sampling vertex in each view that contributes most to one feature dimension of the fused feature. By looking at the selected vertices on the left arm and legs, we can find that the vertices which reflect more estimation misalignment are easier to be chosen. </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    <img src="./assets/O_estimate.png" width="800" alt="">
+        <p class="text-left">Fig 3.&nbsp;<b>Global Orientation Estimator. </b> (a) Method iO and (b) Method fO are two options for Global Orientation Estimator; (c) shows the motivation of method fO that uses transformer fusion to collect multi-view body parts mis-alignment signals in order to avoid depth ambiguity and occlusion problems. Estimated models and feature sampling are visualized in the left images, while updated estimations are shown in the right images. Blue arrows indicate the correction rotation needed for each view’s estimation. Comparing the refinement effect in one iteration (k=2) of the two methods, method fO performs better in orientation estimation, which also leads to a better estimation of the right leg. </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Results </h2>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center col-xl-12">
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center col-xl-12"> 
+		<p>&nbsp;</p>
+		<img src="./assets/vis1.png" width="1000" alt="">
+        <p class="text-left">Fig 4.&nbsp;Qualitative results on Human3.6M and MPI-INF-3DHP. Each row means a different view.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    <img src="./assets/suc_mtc.png" width="1000" alt="">
+        <p class="text-left">Fig 5.&nbsp;Predictions of Our PaFF Estimations on MTC (Xiang, Joo, and Sheikh 2019), which shows the generalization ability for our method. The results are from a test set of MTC after a mix-training on Human3.6M and MTC. The third example shows feeding one repetitive image (inside the pink box). The fourth example shows changing one viewpoint (inside the blue box). Both of the results show the robustness of our PaFF in viewpoint changing. More examples can be seen in the video demo.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>    
+		<img src="./assets/vis2.png" width="1000" alt="">
+        <p class="text-left">Fig 6.&nbsp;Visualization of the effect of Multi-view PaF Feature by comparing the calibration-free PaFF and Shape-aware (Liang and Lin 2019) in two cases. </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Technical Paper</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center"> <a href="assets/PaFF.pdf"><img src="./assets/paper_img.png" width="1000" alt=""></a>
+      <p>&nbsp;</p>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 mb-4 mt-2 text-center">
+        <h2>Presentation</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+      <video controls="controls" width="1024" height="576">
+        <source src="./assets/present.mp4" type="video/mp4">
+      </video>
+      <p>&nbsp;</p>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 mb-4 mt-2 text-center">
+        <h2>Video Demo [Human3.6M]</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+      <video controls="controls" width="1024" height="576">
+        <source src="./assets/h36m_demo.mp4" type="video/mp4">
+      </video>
+      <p>&nbsp;</p>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 mb-4 mt-2 text-center">
+        <h2>Video Demo [MPI-INF-3DHP]</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+      <video controls="controls" width="1024" height="576">
+        <source src="./assets/mpi_demo.mp4" type="video/mp4">
+      </video>
+      <p>&nbsp;</p>
+    </div>
+  <hr>
+      <div class="row">
+      <div class="col-lg-12 mb-4 mt-2 text-center">
+        <h2>Video Demo [MTC]</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+      <video controls="controls" width="1024" height="576">
+        <source src="./assets/mtc_demo.mp4" type="video/mp4">
+      </video>
+      <p>&nbsp;</p>
+    </div>
+  <hr>
+      <div class="row">
+      <div class="col-lg-12 mb-4 mt-2 text-center">
+        <h2>Comparison Video</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+      <video controls="controls" width="1024" height="576">
+        <source src="./assets/cmp_demo.mp4" type="video/mp4">
+      </video>
+      <p>&nbsp;</p>
+    </div>
+	<hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Supplementary Material</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center"> <a href="assets/supp.pdf"><img src="./assets/sup_paper_img.png" width="500" alt=""></a>
+      <p>&nbsp;</p>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Citation</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-left">
+      <p><span style="color:#000000;font-family:&#39;Courier New&#39;;font-size:15px;"> Kai Jia, Hongwen Zhang, Liang An, Yebin Liu. "Delving Deep into Pixel Alignment Feature for Accurate Multi-view Human Mesh Recovery". AAAI 2023</span></p>
+      <p>&nbsp;</p>
+      <p><span style="color:#000000;font-family:&#39;Courier New&#39;;font-size:15px;">@InProceedings{jia2023paff, <br>
+			title={Delving Deep into Pixel Alignment Feature for Accurate Multi-view Human Mesh Recovery},<br>
+			author={Jia, Kai  and Zhang, Hongwen and An, Liang and Liu, Yebin},<br>
+			booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},<br>
+			month={Febuary},<br>
+			year={2023},<br>
+		}</span></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div>
+    <div class="row"> </div>
+  </div>
+  <div class="jumbotron"> </div>
+</section>	
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="./js/jquery-3.2.1.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="./js/popper.min.js"></script> 
+<script src="./js/bootstrap-4.0.0.js"></script>
+
+</body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
